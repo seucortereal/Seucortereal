@@ -1,0 +1,615 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Corte Real | Barbearia & Estilo</title>
+    <!-- Carregamento do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carregamento da Fonte Inter e Playfair Display para toques clássicos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Ícones Lucide via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        royal: {
+                            gold: '#D4AF37',
+                            goldHover: '#B5952F',
+                            dark: '#0F1115',
+                            card: '#181B20',
+                            border: '#2A2E37'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-royal-dark text-gray-200 font-sans antialiased selection:bg-royal-gold selection:text-royal-dark">
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="fixed w-full top-0 z-50 bg-royal-dark/90 backdrop-blur-md border-b border-royal-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-royal-gold/10 border border-royal-gold flex items-center justify-center text-royal-gold group-hover:bg-royal-gold group-hover:text-royal-dark transition-colors">
+                        <i data-lucide="crown" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold tracking-wider text-white block leading-none">SEU CORTE</span>
+                        <span class="text-xs font-semibold tracking-[0.25em] text-royal-gold block mt-0.5">REAL</span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-royal-gold transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-medium text-gray-300 hover:text-royal-gold transition-colors">Sobre Nós</a>
+                    <a href="#servicos" class="text-sm font-medium text-gray-300 hover:text-royal-gold transition-colors">Nossos Serviços</a>
+                    <a href="#contato" class="text-sm font-medium text-gray-300 hover:text-royal-gold transition-colors">Localização</a>
+                    <a href="#agendamento" class="px-5 py-2.5 rounded-xl bg-royal-gold hover:bg-royal-goldHover text-royal-dark font-semibold text-sm transition-all transform hover:scale-105 shadow-lg shadow-royal-gold/20">
+                        Agendar Horário
+                    </a>
+                </nav>
+
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-royal-card focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-royal-card border-b border-royal-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-royal-gold hover:bg-royal-dark">Início</a>
+            <a href="#sobre" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-royal-gold hover:bg-royal-dark">Sobre Nós</a>
+            <a href="#servicos" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-royal-gold hover:bg-royal-dark">Nossos Serviços</a>
+            <a href="#contato" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-royal-gold hover:bg-royal-dark">Localização</a>
+            <a href="#agendamento" class="block w-full mt-2 px-5 py-3 rounded-xl bg-royal-gold text-royal-dark font-semibold text-center">
+                Agendar Horário
+            </a>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+        <!-- Imagem de Fundo com Sobreposição -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=2074" 
+                 onerror="this.src='https://placehold.co/1920x1080/0F1115/D4AF37?text=Seu+Corte+Real'"
+                 alt="Interior da Barbearia Seu Corte Real" 
+                 class="w-full h-full object-cover opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-royal-gold/10 border border-royal-gold/30 text-royal-gold text-xs font-semibold uppercase tracking-widest mb-6">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Excelência em Cada Detalhe</span>
+            </div>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6">
+                Onde o Estilo Encontra a <br class="hidden sm:inline" />
+                <span class="text-royal-gold italic">Nobreza</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 leading-relaxed">
+                Na <strong class="text-white">Seu Corte Real</strong>, resgatamos a tradição da barbearia clássica com técnicas modernas, toalha quente, navalha afiada e um ambiente exclusivo feito para você relaxar.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#agendamento" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-royal-gold hover:bg-royal-goldHover text-royal-dark font-bold text-base transition-all transform hover:-translate-y-0.5 shadow-xl shadow-royal-gold/20 flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    Agendar Meu Corte
+                </a>
+                <a href="#servicos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-royal-card hover:bg-royal-border text-white border border-royal-border font-semibold text-base transition-all flex items-center justify-center gap-2">
+                    Conhecer Serviços
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre a Barbearia -->
+    <section id="sobre" class="py-20 bg-royal-card/50 border-y border-royal-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Imagem / Destaque Visual -->
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden border border-royal-border shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1000" 
+                             onerror="this.src='https://placehold.co/800x600/181B20/D4AF37?text=Tradicao+e+Estilo'"
+                             alt="Barbeiro trabalhando com precisão" 
+                             class="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+
+                <!-- Texto Sobre a Barbearia -->
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-royal-gold font-semibold text-sm uppercase tracking-widest">Sobre a Barbearia</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">
+                            Mais do que um corte, uma experiência digna da realeza.
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Fundada com o propósito de elevar o padrão do cuidado masculino, a <strong class="text-white">Seu Corte Real</strong> nasceu da paixão pela arte da barbearia tradicional aliada ao conforto contemporâneo.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Acreditamos que cada cliente possui uma identidade única. Por isso, nossos mestres barbeiros realizam um visagismo personalizado antes de cada atendimento, garantindo que seu corte e barba harmonizem perfeitamente com o formato do seu rosto e estilo de vida.
+                    </p>
+
+                    <!-- Pilares / Diferenciais -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-royal-dark border border-royal-border flex items-start gap-3">
+                            <i data-lucide="users" class="w-5 h-5 text-royal-gold shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Equipe de Barbeiros</h4>
+                                <p class="text-xs text-gray-400 mt-1">Vários profissionais experientes prontos para atender você com agilidade e precisão.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-royal-dark border border-royal-border flex items-start gap-3">
+                            <i data-lucide="coffee" class="w-5 h-5 text-royal-gold shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Ambiente Exclusivo</h4>
+                                <p class="text-xs text-gray-400 mt-1">Café especial, bebidas geladas e boa música enquanto aguarda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossos Barbeiros -->
+    <section id="equipe" class="py-20 border-b border-royal-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-royal-gold font-semibold text-sm uppercase tracking-widest">Time de Especialistas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">Nossos Barbeiros</h2>
+                <p class="text-gray-400">
+                    Contamos com uma equipe completa de barbeiros especialistas em diferentes estilos para atender você sem demora.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Barbeiro 1 -->
+                <div class="p-6 rounded-2xl bg-royal-card border border-royal-border text-center hover:border-royal-gold/60 transition-all">
+                    <div class="w-20 h-20 rounded-full bg-royal-dark border-2 border-royal-gold flex items-center justify-center mx-auto mb-4 text-royal-gold">
+                        <i data-lucide="user-check" class="w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Mestre Arthur</h3>
+                    <p class="text-xs text-royal-gold uppercase tracking-wider font-semibold mt-1 mb-3">Clássicos & Visagismo</p>
+                    <p class="text-xs text-gray-400 mb-5">Especialista em cortes na tesoura, penteados clássicos e barboterapia tradicional.</p>
+                    <button onclick="selectBarberAndScroll('Mestre Arthur')" class="w-full py-2 px-3 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark text-xs font-semibold border border-royal-border hover:border-royal-gold transition-colors">
+                        Agendar com Arthur
+                    </button>
+                </div>
+
+                <!-- Barbeiro 2 -->
+                <div class="p-6 rounded-2xl bg-royal-card border border-royal-border text-center hover:border-royal-gold/60 transition-all">
+                    <div class="w-20 h-20 rounded-full bg-royal-dark border-2 border-royal-gold flex items-center justify-center mx-auto mb-4 text-royal-gold">
+                        <i data-lucide="scissors" class="w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Lucas Mendes</h3>
+                    <p class="text-xs text-royal-gold uppercase tracking-wider font-semibold mt-1 mb-3">Degradê & Navalhado</p>
+                    <p class="text-xs text-gray-400 mb-5">Referência em fades modernos, cortes urbanos e acabamento milimétrico na navalha.</p>
+                    <button onclick="selectBarberAndScroll('Lucas Mendes')" class="w-full py-2 px-3 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark text-xs font-semibold border border-royal-border hover:border-royal-gold transition-colors">
+                        Agendar com Lucas
+                    </button>
+                </div>
+
+                <!-- Barbeiro 3 -->
+                <div class="p-6 rounded-2xl bg-royal-card border border-royal-border text-center hover:border-royal-gold/60 transition-all">
+                    <div class="w-20 h-20 rounded-full bg-royal-dark border-2 border-royal-gold flex items-center justify-center mx-auto mb-4 text-royal-gold">
+                        <i data-lucide="flame" class="w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Rafael Costa</h3>
+                    <p class="text-xs text-royal-gold uppercase tracking-wider font-semibold mt-1 mb-3">Barba & Tratamentos</p>
+                    <p class="text-xs text-gray-400 mb-5">Focado em reconstrução de barba, toalha quente aromática e selagem capilar.</p>
+                    <button onclick="selectBarberAndScroll('Rafael Costa')" class="w-full py-2 px-3 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark text-xs font-semibold border border-royal-border hover:border-royal-gold transition-colors">
+                        Agendar com Rafael
+                    </button>
+                </div>
+
+                <!-- Barbeiro 4 -->
+                <div class="p-6 rounded-2xl bg-royal-card border border-royal-border text-center hover:border-royal-gold/60 transition-all">
+                    <div class="w-20 h-20 rounded-full bg-royal-dark border-2 border-royal-gold flex items-center justify-center mx-auto mb-4 text-royal-gold">
+                        <i data-lucide="sparkles" class="w-9 h-9"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Matheus Oliveira</h3>
+                    <p class="text-xs text-royal-gold uppercase tracking-wider font-semibold mt-1 mb-3">Estilos Modernos & Infantil</p>
+                    <p class="text-xs text-gray-400 mb-5">Atendimento versátil para todas as idades, cortes texturizados e design de sobrancelha.</p>
+                    <button onclick="selectBarberAndScroll('Matheus Oliveira')" class="w-full py-2 px-3 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark text-xs font-semibold border border-royal-border hover:border-royal-gold transition-colors">
+                        Agendar com Matheus
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossos Serviços -->
+    <section id="servicos" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-royal-gold font-semibold text-sm uppercase tracking-widest">Menu de Excelência</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Nossos Serviços</h2>
+                <p class="text-gray-400">
+                    Utilizamos produtos premium e técnicas apuradas para entregar resultados impecáveis em cada visita.
+                </p>
+            </div>
+
+            <!-- Grid de Serviços -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Serviço 1 -->
+                <div class="group p-6 rounded-2xl bg-royal-card border border-royal-border hover:border-royal-gold/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-royal-dark text-royal-gold group-hover:bg-royal-gold group-hover:text-royal-dark transition-colors">
+                                <i data-lucide="scissors" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xl font-bold text-royal-gold">R$ 55</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Corte Real (Tesoura & Máquina)</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Consultoria de visagismo, corte executado com precisão, lavagem revitalizante e finalização com pomada premium.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceAndScroll('Corte Real - R$ 55')" class="w-full py-2.5 px-4 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark font-medium text-sm border border-royal-border hover:border-royal-gold transition-colors">
+                        Selecionar Serviço
+                    </button>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="group p-6 rounded-2xl bg-royal-card border border-royal-border hover:border-royal-gold/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-royal-dark text-royal-gold group-hover:bg-royal-gold group-hover:text-royal-dark transition-colors">
+                                <i data-lucide="flame" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xl font-bold text-royal-gold">R$ 45</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Barboterapia com Toalha Quente</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Alinhamento perfeito na navalha, ritual relaxante com toalha quente aromática, esfoliação facial e óleo hidratante.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceAndScroll('Barboterapia - R$ 45')" class="w-full py-2.5 px-4 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark font-medium text-sm border border-royal-border hover:border-royal-gold transition-colors">
+                        Selecionar Serviço
+                    </button>
+                </div>
+
+                <!-- Serviço 3 (Destaque) -->
+                <div class="group p-6 rounded-2xl bg-gradient-to-b from-royal-card to-royal-dark border-2 border-royal-gold relative flex flex-col justify-between shadow-xl shadow-royal-gold/5">
+                    <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-royal-gold text-royal-dark text-xs font-bold uppercase tracking-wider">
+                        Mais Pedido
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-royal-gold text-royal-dark">
+                                <i data-lucide="crown" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xl font-bold text-royal-gold">R$ 90</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Combo Completo Rei</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            A experiência definitiva: Corte Real + Barboterapia completa + Limpeza de sobrancelha + Bebida cortesia.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceAndScroll('Combo Completo Rei - R$ 90')" class="w-full py-2.5 px-4 rounded-xl bg-royal-gold hover:bg-royal-goldHover text-royal-dark font-bold text-sm transition-colors">
+                        Agendar Combo
+                    </button>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="group p-6 rounded-2xl bg-royal-card border border-royal-border hover:border-royal-gold/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-royal-dark text-royal-gold group-hover:bg-royal-gold group-hover:text-royal-dark transition-colors">
+                                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xl font-bold text-royal-gold">R$ 75</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Selagem & Hidratação Capilar</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Alinhamento dos fios, redução de volume e frizz com tratamento profundo de queratina e brilho natural.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceAndScroll('Selagem Capilar - R$ 75')" class="w-full py-2.5 px-4 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark font-medium text-sm border border-royal-border hover:border-royal-gold transition-colors">
+                        Selecionar Serviço
+                    </button>
+                </div>
+
+                <!-- Serviço 5 -->
+                <div class="group p-6 rounded-2xl bg-royal-card border border-royal-border hover:border-royal-gold/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-royal-dark text-royal-gold group-hover:bg-royal-gold group-hover:text-royal-dark transition-colors">
+                                <i data-lucide="eye" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xl font-bold text-royal-gold">R$ 25</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Design de Sobrancelha</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Limpeza e alinhamento natural feito na navalha ou pinça para valorizar a expressão masculina sem artificialidade.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceAndScroll('Design de Sobrancelha - R$ 25')" class="w-full py-2.5 px-4 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark font-medium text-sm border border-royal-border hover:border-royal-gold transition-colors">
+                        Selecionar Serviço
+                    </button>
+                </div>
+
+                <!-- Serviço 6 -->
+                <div class="group p-6 rounded-2xl bg-royal-card border border-royal-border hover:border-royal-gold/60 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-royal-dark text-royal-gold group-hover:bg-royal-gold group-hover:text-royal-dark transition-colors">
+                                <i data-lucide="smile" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xl font-bold text-royal-gold">R$ 45</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Corte Príncipe (Infantil)</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            Atendimento paciente e especializado para os pequenos saírem com visual impecável e confortável.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceAndScroll('Corte Príncipe - R$ 45')" class="w-full py-2.5 px-4 rounded-xl bg-royal-dark hover:bg-royal-gold text-gray-300 hover:text-royal-dark font-medium text-sm border border-royal-border hover:border-royal-gold transition-colors">
+                        Selecionar Serviço
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Agendamento Direto no Site -->
+    <section id="agendamento" class="py-24 bg-royal-card/50 border-t border-royal-border">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-royal-gold font-semibold text-sm uppercase tracking-widest">Reserve Seu Trono</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Agende Seu Horário</h2>
+                <p class="text-gray-400">
+                    Escolha o serviço, o barbeiro de sua preferência, o melhor dia e horário diretamente abaixo.
+                </p>
+            </div>
+
+            <div class="bg-royal-card border border-royal-border rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Seu Nome Completo</label>
+                            <input type="text" id="client-name" required placeholder="Ex: Carlos Silva" 
+                                   class="w-full px-4 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white text-sm focus:outline-none focus:border-royal-gold transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Escolha o Barbeiro</label>
+                            <select id="barber-select" class="w-full px-4 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white text-sm focus:outline-none focus:border-royal-gold transition-colors">
+                                <option value="Qualquer Barbeiro Disponível">Qualquer Barbeiro Disponível</option>
+                                <option value="Mestre Arthur">Mestre Arthur</option>
+                                <option value="Lucas Mendes">Lucas Mendes</option>
+                                <option value="Rafael Costa">Rafael Costa</option>
+                                <option value="Matheus Oliveira">Matheus Oliveira</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Serviço Desejado</label>
+                        <select id="service-select" class="w-full px-4 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white text-sm focus:outline-none focus:border-royal-gold transition-colors">
+                            <option value="Corte Real - R$ 55">Corte Real - R$ 55</option>
+                            <option value="Barboterapia - R$ 45">Barboterapia com Toalha Quente - R$ 45</option>
+                            <option value="Combo Completo Rei - R$ 90">Combo Completo Rei - R$ 90</option>
+                            <option value="Selagem Capilar - R$ 75">Selagem & Hidratação - R$ 75</option>
+                            <option value="Design de Sobrancelha - R$ 25">Design de Sobrancelha - R$ 25</option>
+                            <option value="Corte Príncipe - R$ 45">Corte Príncipe (Infantil) - R$ 45</option>
+                        </select>
+                    </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Serviço Desejado</label>
+                            <select id="service-select" class="w-full px-4 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white text-sm focus:outline-none focus:border-royal-gold transition-colors">
+                                <option value="Corte Real - R$ 55">Corte Real - R$ 55</option>
+                                <option value="Barboterapia - R$ 45">Barboterapia com Toalha Quente - R$ 45</option>
+                                <option value="Combo Completo Rei - R$ 90">Combo Completo Rei - R$ 90</option>
+                                <option value="Selagem Capilar - R$ 75">Selagem & Hidratação - R$ 75</option>
+                                <option value="Design de Sobrancelha - R$ 25">Design de Sobrancelha - R$ 25</option>
+                                <option value="Corte Príncipe - R$ 45">Corte Príncipe (Infantil) - R$ 45</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Data Preferida</label>
+                            <input type="date" id="booking-date" required 
+                                   class="w-full px-4 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white text-sm focus:outline-none focus:border-royal-gold transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 uppercase mb-2">Horário Disponível</label>
+                            <select id="booking-time" class="w-full px-4 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white text-sm focus:outline-none focus:border-royal-gold transition-colors">
+                                <option value="09:00">09:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="19:00">19:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-royal-gold hover:bg-royal-goldHover text-royal-dark font-bold text-base transition-all transform hover:-translate-y-0.5 shadow-lg shadow-royal-gold/20 flex items-center justify-center gap-2">
+                        <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                        Confirmar Reserva Agora
+                    </button>
+                </form>
+
+                <!-- Mensagem de Confirmação Integrada (Oculta inicialmente) -->
+                <div id="booking-confirmation" class="hidden text-center py-8 space-y-5">
+                    <div class="w-20 h-20 rounded-full bg-green-500/10 border border-green-500 text-green-500 flex items-center justify-center mx-auto">
+                        <i data-lucide="check" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="font-serif text-3xl font-bold text-white">Reserva Confirmada!</h3>
+                    <p id="confirmation-details" class="text-base text-gray-300 leading-relaxed max-w-md mx-auto"></p>
+                    <div class="pt-2">
+                        <button onclick="resetBookingForm()" class="px-8 py-3.5 rounded-xl bg-royal-dark border border-royal-border text-white hover:border-royal-gold text-sm font-semibold transition-colors">
+                            Fazer Novo Agendamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Localização e Rodapé -->
+    <footer id="contato" class="bg-royal-card border-t border-royal-border pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-royal-border">
+                
+                <!-- Coluna 1: Marca -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-royal-gold/10 border border-royal-gold flex items-center justify-center text-royal-gold">
+                            <i data-lucide="crown" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">SEU CORTE <span class="text-royal-gold">REAL</span></span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Tradição, precisão e respeito pelo seu estilo. Venha viver a experiência da verdadeira barbearia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-royal-dark border border-royal-border flex items-center justify-center text-gray-400 hover:text-royal-gold hover:border-royal-gold transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Horários -->
+                <div>
+                    <h4 class="font-semibold text-white uppercase tracking-wider text-sm mb-4">Horário de Funcionamento</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Segunda a Sexta:</span>
+                            <span class="text-white font-medium">09:00 - 20:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sábado:</span>
+                            <span class="text-white font-medium">09:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo:</span>
+                            <span class="text-royal-gold font-medium">Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Endereço -->
+                <div>
+                    <h4 class="font-semibold text-white uppercase tracking-wider text-sm mb-4">Onde Estamos</h4>
+                    <div class="space-y-3 text-sm text-gray-400">
+                        <p class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-royal-gold shrink-0 mt-0.5"></i>
+                            <span>Rua Pedro Aguiar, 1000 - Itaperi<br>Fortaleza - CE</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Barbearia Seu Corte Real. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+
+        // Controle do Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Definir data mínima no input de agendamento para hoje
+        const dateInput = document.getElementById('booking-date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+        dateInput.value = today;
+
+        // Elementos do Formulário de Agendamento no Site
+        const bookingForm = document.getElementById('booking-form');
+        const confirmationBox = document.getElementById('booking-confirmation');
+        const serviceSelect = document.getElementById('service-select');
+        const barberSelect = document.getElementById('barber-select');
+        const agendamentoSection = document.getElementById('agendamento');
+
+        // Selecionar serviço nos cards e rolar suavemente até o formulário
+        function selectServiceAndScroll(selectedService) {
+            resetBookingForm();
+            serviceSelect.value = selectedService;
+            agendamentoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Selecionar barbeiro na equipe e rolar suavemente até o formulário
+        function selectBarberAndScroll(selectedBarber) {
+            resetBookingForm();
+            barberSelect.value = selectedBarber;
+            agendamentoSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Resetar formulário para fazer um novo agendamento
+        function resetBookingForm() {
+            bookingForm.reset();
+            dateInput.value = today;
+            bookingForm.classList.remove('hidden');
+            confirmationBox.classList.add('hidden');
+        }
+
+        // Processar envio do formulário de agendamento
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('client-name').value;
+            const barber = barberSelect.value;
+            const service = serviceSelect.value;
+            const dateRaw = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+
+            // Formatar data para padrão brasileiro
+            const [year, month, day] = dateRaw.split('-');
+            const formattedDate = `${day}/${month}/${year}`;
+
+            document.getElementById('confirmation-details').innerHTML = 
+                `Obrigado, <strong class="text-white">${name}</strong>!<br>Seu agendamento para <strong class="text-royal-gold">${service}</strong> com <strong class="text-white">${barber}</strong> está confirmado para o dia <strong class="text-white">${formattedDate}</strong> às <strong class="text-white">${time}</strong>.`;
+
+            bookingForm.classList.add('hidden');
+            confirmationBox.classList.remove('hidden');
+            
+            // Reinicializar ícones caso necessário
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
+```
